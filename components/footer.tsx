@@ -1,4 +1,5 @@
-import { Hammer, Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { label: "Services", href: "#services" },
@@ -15,8 +16,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <Hammer className="h-6 w-6 text-sand" />
-              <span className="text-lg font-bold">Rust Nail Contracting</span>
+              <Image
+                src="/logo.png"
+                alt="Rusty Nail Contracting"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain"
+              />
             </div>
             <p className="mt-3 text-sm text-white/60">
               Quality craftsmanship for Carrollton &amp; the Greater Dallas
@@ -43,8 +49,37 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Find Us */}
+          <div>
+            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white/80">
+              Find Us
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://www.instagram.com/rusty_nail_contracting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/60 transition-colors hover:text-sand"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://share.google/5w46w4swMWjNshps3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/60 transition-colors hover:text-sand"
+                >
+                  Google Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact */}
-          <div className="sm:col-span-2 lg:col-span-2">
+          <div>
             <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white/80">
               Contact Us
             </h3>
@@ -59,7 +94,7 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-sand" />
                 <a
                   href="mailto:rustynailcontractors@gmail.com"
-                  className="hover:text-sand"
+                  className="break-all hover:text-sand"
                 >
                   rustynailcontractors@gmail.com
                 </a>

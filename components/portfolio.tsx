@@ -1,5 +1,14 @@
 import { Play } from "lucide-react";
 
+const projects = [
+  { id: 1, label: "Fence Build" },
+  { id: 2, label: "Deck Install" },
+  { id: 3, label: "Interior Reno" },
+  { id: 4, label: "Exterior Paint" },
+  { id: 5, label: "Landscaping" },
+  { id: 6, label: "Full Remodel" },
+];
+
 export default function Portfolio() {
   return (
     <section id="portfolio" className="bg-cream py-20 sm:py-28">
@@ -17,17 +26,24 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+        <div className="mt-12 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:pb-0 md:grid-cols-3 lg:grid-cols-6">
+          {projects.map((p) => (
             <div
-              key={i}
-              className="group flex aspect-video items-center justify-center rounded-xl border border-warm-border bg-white shadow-sm transition-shadow hover:shadow-md"
+              key={p.id}
+              className="group relative flex aspect-[9/16] w-40 shrink-0 snap-center cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-warm-border bg-gradient-to-b from-white to-sand/5 shadow-sm transition-all hover:shadow-lg sm:w-auto"
             >
-              <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sand/10 transition-colors group-hover:bg-sand/20">
-                  <Play className="h-6 w-6 text-sand-dark" />
+              {/* Play button */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-charcoal/80 text-white shadow-lg transition-transform group-hover:scale-110">
+                  <Play className="h-6 w-6 fill-white" />
                 </div>
-                <span className="text-sm font-medium">Project {i}</span>
+              </div>
+
+              {/* Bottom label */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/70 to-transparent px-3 pb-3 pt-8">
+                <span className="text-sm font-semibold text-white">
+                  {p.label}
+                </span>
               </div>
             </div>
           ))}

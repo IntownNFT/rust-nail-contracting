@@ -134,7 +134,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-2">
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
+                <Button type="submit" size="lg" className="w-full sm:w-auto cursor-pointer">
                   Send Request
                 </Button>
               </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                   <p className="text-sm font-medium text-charcoal">Email</p>
                   <a
                     href="mailto:rustynailcontractors@gmail.com"
-                    className="text-sm text-muted-foreground hover:text-sand-dark"
+                    className="break-all text-sm text-muted-foreground hover:text-sand-dark"
                   >
                     rustynailcontractors@gmail.com
                   </a>

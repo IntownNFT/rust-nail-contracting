@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Hammer } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -25,10 +26,14 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <Hammer className="h-7 w-7 text-rust" />
-          <span className="text-lg font-bold text-charcoal">
-            Rust Nail Contracting
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Rusty Nail Contracting"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}
@@ -57,7 +62,7 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetTitle className="sr-only">Navigation</SheetTitle>
-            <div className="flex flex-col gap-6 pt-8">
+            <div className="flex flex-col gap-6 px-6 pt-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
